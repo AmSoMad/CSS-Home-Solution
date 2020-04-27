@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="org.sensor.domain.LoginVO" project="ssin" 
+    file="/ssin/src/main/java/org/sensor/domain/LoginVO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="150" x="58" y="-112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="org.sensor.service.sensorServiceImpl" project="ssin" 
+    file="/ssin/src/main/java/org/sensor/service/sensorServiceImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="549" width="229" x="1684" y="-112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="org.sensor.controller.SensorController" project="ssin" 
+    file="/ssin/src/main/java/org/sensor/controller/SensorController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="242" x="2125" y="-112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="org.sensor.domain.chartBean" project="ssin" 
+    file="/ssin/src/main/java/org/sensor/domain/chartBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="150" x="248" y="-112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="org.sensor.controller.MemberController" project="ssin" 
+    file="/ssin/src/main/java/org/sensor/controller/MemberController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="347" x="2407" y="-112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="6" language="java" name="org.sensor.domain" project="ssin" file="/ssin/src/main/java/org/sensor/domain" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="130" x="438" y="-112"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="7" language="java" name="org.sensor.domain.sensorBean" project="ssin" 
+    file="/ssin/src/main/java/org/sensor/domain/sensorBean.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="477" width="150" x="608" y="-112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="org.sensor.controller.AjexController" project="ssin" 
+    file="/ssin/src/main/java/org/sensor/controller/AjexController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="226" x="2794" y="-112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="org.sensor.domain.boardVO" project="ssin" 
+    file="/ssin/src/main/java/org/sensor/domain/boardVO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="531" width="150" x="798" y="-112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="10" language="java" name="org.sensor.service.sensorService" project="ssin" 
+    file="/ssin/src/main/java/org/sensor/service/sensorService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="495" width="229" x="2253" y="621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <package id="11" language="java" name="org.sensor.controller" project="ssin" 
+    file="/ssin/src/main/java/org/sensor/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="143" x="988" y="-112"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="12" language="java" name="org.sensor.service" project="ssin" 
+    file="/ssin/src/main/java/org/sensor/service" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="130" x="1171" y="-112"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="13" language="java" name="org.sensor.controller.HomeController" project="ssin" 
+    file="/ssin/src/main/java/org/sensor/controller/HomeController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="113" x="1341" y="-112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="org.sensor.domain.MemberVo" project="ssin" 
+    file="/ssin/src/main/java/org/sensor/domain/MemberVo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="693" width="150" x="1494" y="-112"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="15" language="java" name="org.sensor.mapper" project="ssin" file="/ssin/src/main/java/org/sensor/mapper" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="132" x="1953" y="-112"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <interface id="16" language="java" name="org.sensor.mapper.SensorMapper" project="ssin" 
+    file="/ssin/src/main/java/org/sensor/mapper/SensorMapper.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="495" width="229" x="1684" y="621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <association id="17">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="18" name="ss"/>      
+      <multiplicity id="19" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="20">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="21" name="mapper"/>      
+      <multiplicity id="22" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="23">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="24" name="ss"/>      
+      <multiplicity id="25" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="26">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="10"/>  
+  </realization>  
+  <association id="27">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="28" name="ss"/>      
+      <multiplicity id="29" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

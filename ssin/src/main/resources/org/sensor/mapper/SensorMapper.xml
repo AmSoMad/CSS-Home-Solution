@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	
+	<mapper namespace="org.sensor.mapper.SensorMapper">
+	
+	<insert id="insert" >
+	<![CDATA[insert into ssin.sensor(mq2,mq7,vi,wave) values(#{mq2},#{mq7},#{vi},#{wave})]]>
+	</insert>  <!-- getList에 해당값을 매핑시킨다.? -->
+	
+	<insert id="insertRandom" >
+	<![CDATA[insert into ssin.sensor(mq2,mq7,vi,wave) values(FLOOR(1000+RAND()*999),FLOOR(1000+RAND()*999),FLOOR(1000+RAND()*999),FLOOR(1000+RAND()*1999))]]>
+	</insert>  <!-- getList에 해당값을 매핑시킨다.? -->
+	
+	<insert id="SensorTest1" >
+	<![CDATA[insert into ssin.sensor(mq2,mq7,vi,wave) values(FLOOR(1000+RAND()*999),0,0,0)]]>
+	</insert>  <!-- getList에 해당값을 매핑시킨다.? -->
+	
+	<insert id="SensorTest2" >
+	<![CDATA[insert into ssin.sensor(mq2,mq7,vi,wave) values(0,FLOOR(1000+RAND()*999),0,0)]]>
+	</insert>  <!-- getList에 해당값을 매핑시킨다.? -->
+	
+	<insert id="SensorTest3" >
+	<![CDATA[insert into ssin.sensor(mq2,mq7,vi,wave) values(0,0,FLOOR(1000+RAND()*999),0)]]>
+	</insert>  <!-- getList에 해당값을 매핑시킨다.? -->
+	
+	<insert id="SensorTest4" >
+	<![CDATA[insert into ssin.sensor(mq2,mq7,vi,wave) values(0,0,0,FLOOR(1000+RAND()*999))]]>
+	</insert>  <!-- getList에 해당값을 매핑시킨다.? -->
+	
+	<select id="GetValue" resultType="org.sensor.domain.sensorBean">
+	<![CDATA[SELECT * FROM ssin.sensor WHERE sno = (SELECT MAX(sno) FROM ssin.sensor)]]>
+	</select> 
+	
+	<select id="GetChart" resultType="org.sensor.domain.sensorBean">
+	<![CDATA[SELECT * FROM ssin.sensor WHERE sno > (SELECT MAX(sno)-100 FROM ssin.sensor)]]>
+	</select> 
+	
+	<select id="GetWave" resultType="org.sensor.domain.sensorBean">
+	<![CDATA[SELECT time,wave FROM ssin.sensor WHERE wave > = 1 ]]>
+	</select> 
+	
+	<select id="GetEvent_OneHour" resultType="org.sensor.domain.sensorBean">
+	<![CDATA[SELECT * FROM ssin.sensor WHERE (mq2 > 700 OR mq7 > 800 OR vi > 100 OR (wave > 100 AND wave <2000)) AND sno > (SELECT MAX(sno)-3600 FROM ssin.sensor) ORDER BY sno desc]]>
+	</select> 
+	
+	<select id="GetEvent_All" resultType="org.sensor.domain.sensorBean">
+	<![CDATA[SELECT * FROM ssin.sensor WHERE (wave < 2000 && wave > 10) OR mq2 > 700 OR mq7 > 800 OR vi > 100 ORDER BY sno DESC]]>
+	</select> 
+	
+	<select id="GetEvent_OneDay" resultType="org.sensor.domain.sensorBean">
+	<![CDATA[SELECT * FROM ssin.sensor WHERE DATE_FORMAT(Time, "%Y-%m-%d") = CURDATE() ORDER BY sno desc]]>
+	</select> 
+	
+	<delete id="DeleteSensorData_1Hour" >
+	<![CDATA[DELETE FROM ssin.sensor WHERE TIME > DATE_SUB(NOW(),INTERVAL 1 hour)]]>
+	</delete> 
+	
+	<select id="GetEvent_Chart" resultType="org.sensor.domain.sensorBean">
+	<![CDATA[SELECT AVG(mq2) as mq2,AVG(mq7) as mq7,AVG(vi) as vi,AVG(wave) as wave,time,CONVERT((MIN(TIME)DIV 100)*100 + 300,TIME) AS AvgTime from ssin.sensor GROUP BY TIME DIV 500 ORDER BY sno DESC]]>
+	</select> 
+	
+	<select id="MemberSelect_Admin" resultType="org.sensor.domain.MemberVo">
+	<![CDATA[SELECT * FROM ssin.member_info]]>
+	</select> 
+	
+	<select id="login" resultType="org.sensor.domain.LoginVO">
+	<![CDATA[ SELECT * FROM ssin.member_info where id=#{id} and pw=#{pw}]]>
+	</select>
+	
+	 <select id ="MemberViewDetail" resultType = "org.sensor.domain.MemberVo">
+	<![CDATA[SELECT * FROM ssin.member_info WHERE ID = #{object}]]>
+	</select>
+	
+	<update id="modifyMember">
+ 	<![CDATA[UPDATE ssin.member_info SET pw=#{pw} ,NAME=#{name},phone=#{phone}, email=#{email},address=#{address} WHERE id=#{id}]]>
+ 	</update>
+ 	
+ 	<delete id="withdrawal">
+	<![CDATA[DELETE FROM ssin.member_info WHERE id=#{id}]]>
+	</delete>
+	
+	<insert id ="MemberInsert" >
+	<![CDATA[INSERT INTO ssin.member_info (id, pw, name, phone, email, address) VALUES (#{id}, #{pw}, #{name}, #{phone}, #{email}, #{address} ) ]]>
+	</insert>
+		
+	<insert id ="inspection" >
+	<![CDATA[INSERT INTO ssin.inspection (`id`, `name`, `contents`) VALUES (#{id}, #{name}, #{contents})]]>
+	</insert>	
+	
+	 <select id ="inspection_select" resultType = "org.sensor.domain.MemberVo">
+	<![CDATA[SELECT * FROM ssin.inspection;]]>
+	</select>
+	
+	<update id="inspection_update">
+ 	<![CDATA[UPDATE ssin.member_info SET asresult=#{asresult} WHERE id=#{id}]]>
+ 	</update>
+	
+	<delete id="CheckDelete">
+	<![CDATA[DELETE FROM ssin.inspection WHERE cno=#{cno}]]>
+	</delete>
+<!-- 	
+		SELECT * FROM ssin.member_info WHERE id=#{id}  &  ; 아이디 1개에 찾기
+		SELECT * FROM ssin.member_info ; 아이디 전체 정보찾기
+
+		1시간전 
+		SELECT * FROM ssin.sensor WHERE TIME > DATE_SUB(NOW(),INTERVAL 1 HOUR) ORDER BY sno desc;
+		1달전
+		select * from data where TIME > DATE_SUB(NOW(),INTERVAL 1 month) order by sno desc;
+		구간 
+		select * from data where Time between '2016-10-10' and '2016-10-13';
+		5분간격 평균 (문제점 : 평균시간에 간혹 Null아 들어간다.)
+		SELECT AVG(mq2),AVG(mq7),AVG(vi),AVG(wave),time,CONVERT((MIN(TIME)DIV 100)*100 + 300,TIME) AS AvgTime from ssin.sensor GROUP BY TIME DIV 500;
+		
+		오늘뺀 이전데이터
+		SELECT * FROM ssin.sensor WHERE DATE_FORMAT(TIME, "%Y-%m-%d") < CURDATE() ORDER BY sno DESC;
+		
+		지금기준 1시간전 데이터 삭제
+		DELETE FROM ssin.sensor WHERE TIME > DATE_SUB(NOW(),INTERVAL 1 hour);
+		DELETE FROM ssin.sensor WHERE TIME > DATE_SUB(NOW(),INTERVAL 1 day);
+		DELETE FROM ssin.sensor WHERE TIME > DATE_SUB(NOW(),INTERVAL 1 MONTH);
+		DELETE FROM ssin.sensor WHERE TIME > DATE_SUB(NOW(),INTERVAL 1 year);
+		
+-->
+	
+	
+	
+	
+	
+	
+	</mapper>
+	
