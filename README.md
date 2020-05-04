@@ -5,7 +5,9 @@
 http://iotmit.iptime.org:1180/
 
 2020-04-06 크롬 메모리 누수발생. - 원인파악중 
-2020-04-07 jquery 차트내 함수 ReferenceError: '' is not defined 발생 - 원인 파악중
+
+2020-04-07 jquery 차트내 함수 
+ReferenceError: '' is not defined 발생 - 원인 파악중
 
 2020-04-14 ajax 변수누적확인
 크롬자체 에러, 지역변수 -> 전역변수 수정 인터벌 1000으로 수정
