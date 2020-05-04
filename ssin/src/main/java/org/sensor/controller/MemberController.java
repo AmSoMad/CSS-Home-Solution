@@ -55,7 +55,11 @@ public class MemberController {
 		@PostMapping("/login1")
 		public String login1(Model model, LoginVO loginVO, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
 			System.out.println(ss.login(loginVO));
-			
+			if(ss.login(loginVO).size() == 0) {
+					redirectAttributes.addFlashAttribute("msg", "fail");
+					System.out.println("2번");
+					return "redirect:/";
+				}
 			if(ss.login(loginVO).get(0).getId().equals("admin") && ss.login(loginVO).get(0).getPw().equals("456456")) {
 				return "redirect:/member/admin";  //
 			}
